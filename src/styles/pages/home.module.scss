@@ -1,4 +1,45 @@
-.section_start{
-    width: 100vw;
-    height: 100vh;
+@import "@/styles/common/globals.scss";
+
+.section_start {
+  width: 100vw;
+  height: 100vh;
+  @include containerInit;
+  .wrapper {
+    @container section (width >= #{$breakPoint_mobile}) {
+      @include styleGrid();
+    }
+  }
+  .container {
+    @container section (width >= #{$breakPoint_mobile}) {
+      width: calcGrid(8, 2);
+    }
+    margin-top: 160px;
+    padding: 48px;
+    .container_title {
+      h1 {
+        @include styleH("h1");
+      }
+      p {
+        margin-top: 24px;
+        @include styleP("medium");
+      }
+      ul {
+        list-style: none;
+        li {
+          margin-top: 4px;
+          @include styleP("medium");
+          &:before {
+            content: "•";
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+    .container_btn {
+      margin-top: 48px;
+      .btn {
+        @include styleButton("big", "2");
+      }
+    }
+  }
 }
