@@ -110,9 +110,9 @@ const Home = () => {
                   <div className={styles.label}>Nombre de joueurs :</div>
                   <input
                     className={styles.input}
-                    type="text"
-                    name="number"
-                    id="number"
+                    type="number"
+                    name="players"
+                    id="players"
                     onChange={(e) => setNbPlayer(e.target.value)}
                     min="4"
                     max="64"
@@ -123,9 +123,9 @@ const Home = () => {
                   <div className={styles.label}>Nombre de poules :</div>
                   <input
                     className={styles.input}
-                    type="text"
-                    name="number"
-                    id="number"
+                    type="number"
+                    name="pools"
+                    id="pools"
                     onChange={(e) => setNbPool(e.target.value)}
                     min="2"
                     max="8"
