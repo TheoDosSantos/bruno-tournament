@@ -1,7 +1,32 @@
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import styles from "@/styles/pages/home.module.scss";
 
 const Home = () => {
+  // BACKGROUND & MOUSE
+
+  const interactive = useRef(null);
+  let curX = 0;
+  let curY = 0;
+
+  useEffect(() => {
+
+    const handleMouseMove = (e) => {
+      const { clientX, clientY } = e;
+      const x = clientX;
+      const y = clientY;
+      let tgX = x;
+      let tgY = y;
+      curX += (tgX - curX) / 20;
+      curY += (tgY - curY) / 20;
+      interactive.current.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+  // ORGANIZATION
   const [start, setStart] = useState(false);
 
   const [nbPlayer, setNbPlayer] = useState(0);
@@ -224,6 +249,34 @@ const Home = () => {
           </div>
         </section>
       )}
+      <div class={styles.gradient_bg}>
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id={styles.goo}>
+              <feGaussianBlur
+                in="SourceGraphic"
+                stdDeviation="10"
+                result="blur"
+              />
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+                result="goo"
+              />
+              <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+          </defs>
+        </svg>
+        <div class={styles.gradients_container}>
+          <div class={styles.g1}></div>
+          <div class={styles.g2}></div>
+          <div class={styles.g3}></div>
+          <div class={styles.g4}></div>
+          <div class={styles.g5}></div>
+          <div class={styles.interactive} ref={interactive}></div>
+        </div>
+      </div>
     </>
   );
 };

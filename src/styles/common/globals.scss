@@ -8,7 +8,7 @@
 
 /*----------  PRIMARY  ----------*/
 $colorPrimary_1: #fd5a1e;
-$colorPrimary_2: #EEE0CB;
+$colorPrimary_2: #ffffff;
 
 /*----------  GREYSCALE  ----------*/
 $colorGreyscale_1: #101010;
@@ -263,7 +263,7 @@ $breakPoint_mobile: 700px;
 }
 
 /*----------  PARAGRAPH  ----------*/
-@mixin styleP($px, $color: $colorGreyscale_2, $font: $font_2_regular) {
+@mixin styleP($px, $color: $colorGreyscale_4, $font: $font_2_regular) {
   @if $px == "big" {
     font-size: $paragraphBig_textsize_desktop;
     $lineHeight: $paragraphBig_textsize_desktop * 1.5;
@@ -347,17 +347,17 @@ $breakPoint_mobile: 700px;
 
   @if $style == "1" {
     border-radius: 24px;
-    background-color: $colorPrimary_1;
-    border: 1px solid transparent;
+    background-color: transparent;
+    border: 1px solid $colorPrimary_2;
     .btn_text {
-      color: $colorGreyscale_5;
+      color: $colorPrimary_2;
     }
     .btn_icon {
-      stroke: $colorGreyscale_5;
+      stroke: $colorPrimary_2;
     }
     &:hover {
-      background-color: transparent;
-      border: 1px solid $colorPrimary_1;
+      background-color: $colorPrimary_2;
+      border: 1px solid transparent;
       .btn_text {
         color: $colorPrimary_1;
       }
@@ -366,38 +366,18 @@ $breakPoint_mobile: 700px;
       }
     }
   } @else if $style == "2" {
-    border-radius: 24px;
-    background-color: transparent;
-    border: 1px solid $colorPrimary_1;
-    .btn_text {
-      color: $colorPrimary_1;
-    }
-    .btn_icon {
-      stroke: $colorPrimary_1;
-    }
-    &:hover {
-      background-color: $colorPrimary_1;
-      border: 1px solid transparent;
-      .btn_text {
-        color: $colorGreyscale_5;
-      }
-      .btn_icon {
-        stroke: $colorGreyscale_5;
-      }
-    }
-  } @else if $style == "3" {
     border-radius: 50%;
-    background-color: $colorPrimary_1;
-    border: 1px solid transparent;
+    background-color: transparent;
+    border: 1px solid $colorPrimary_2;
     .btn_text {
-      color: $colorGreyscale_5;
+      color: $colorPrimary_2;
     }
     .btn_icon {
-      stroke: $colorGreyscale_5;
+      stroke: $colorPrimary_2;
     }
     &:hover {
-      background-color: transparent;
-      border: 1px solid $colorPrimary_1;
+      background-color: $colorPrimary_2;
+      border: 1px solid transparent;
       .btn_text {
         color: $colorPrimary_1;
       }
