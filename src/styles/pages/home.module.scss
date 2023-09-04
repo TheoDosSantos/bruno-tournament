@@ -1,33 +1,38 @@
 @import "@/styles/common/globals.scss";
 
 .section_start {
-  width: 100vw;
-  height: 100vh;
+  margin: 24px;
+  width: calc(100vw - 48px);
+  height: calc(100vh - 48px);
   @include containerInit;
   .wrapper {
+    display: flex;
+    justify-content: center;
     @container section (width >= #{$breakPoint_mobile}) {
       @include styleGrid();
     }
   }
   .container {
     @container section (width >= #{$breakPoint_mobile}) {
-      width: calcGrid(8, 2);
+      width: calcGrid(10);
     }
-    margin-top: 160px;
+    margin-top: 144px;
     padding: 48px;
     .container_title {
+      text-align: center;
       h1 {
         @include styleH("h1");
       }
       p {
         margin-top: 24px;
-        @include styleP("medium");
+        @include styleP("big");
       }
       ul {
+        margin-top: 8px;
         list-style: none;
         li {
           margin-top: 4px;
-          @include styleP("medium");
+          @include styleP("big");
           &:before {
             content: "•";
             margin-right: 8px;
@@ -37,6 +42,238 @@
     }
     .container_btn {
       margin-top: 48px;
+      display: flex;
+      justify-content: center;
+      .btn {
+        @include styleButton("round", "3");
+      }
+    }
+  }
+}
+
+.section_number {
+  margin: 24px;
+  width: calc(100vw - 48px);
+  height: calc(100vh - 48px);
+  @include containerInit;
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    @container section (width >= #{$breakPoint_mobile}) {
+      @include styleGrid();
+    }
+  }
+  .container {
+    @container section (width >= #{$breakPoint_mobile}) {
+      width: calcGrid(10);
+    }
+    margin-top: 144px;
+    padding: 48px;
+    .container_title {
+      text-align: center;
+      h1 {
+        @include styleH("h1");
+      }
+      p {
+        margin-top: 24px;
+        @include styleP("big");
+      }
+      ul {
+        margin-top: 8px;
+        list-style: none;
+        li {
+          margin-top: 4px;
+          @include styleP("big");
+          &:before {
+            content: "•";
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+    .form {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      gap: 16px;
+      .container_input{
+        width: calc(25% - 4px);
+        .label {
+          @include styleP("medium");
+          margin-bottom: 8px;
+        }
+        .input {
+          width: 100%;
+          outline: none;
+          @include styleP("medium");
+          padding: 8px;
+          border: 1px solid $colorPrimary_1;
+          border-radius: 12px;
+          &::placeholder {
+            color: rgba($colorGreyscale_1, 0.2);
+          }
+        }
+      }
+    }
+    .container_btn {
+      margin-top: 48px;
+      display: flex;
+      justify-content: center;
+      .btn {
+        @include styleButton("big", "2");
+      }
+    }
+  }
+}
+
+.section_player {
+  margin: 24px;
+  width: calc(100vw - 48px);
+  height: calc(100vh - 48px);
+  @include containerInit;
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    @container section (width >= #{$breakPoint_mobile}) {
+      @include styleGrid();
+    }
+  }
+  .container {
+    @container section (width >= #{$breakPoint_mobile}) {
+      width: calcGrid(10);
+    }
+    margin-top: 40px;
+    padding: 48px;
+    .container_title {
+      text-align: center;
+      h1 {
+        @include styleH("h1");
+      }
+      p {
+        margin-top: 24px;
+        @include styleP("big");
+      }
+      ul {
+        margin-top: 8px;
+        list-style: none;
+        li {
+          margin-top: 4px;
+          @include styleP("big");
+          &:before {
+            content: "•";
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+    .form {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      gap: 16px;
+      .container_input{
+        width: calc(25% - 12px);
+        .label {
+          @include styleP("medium");
+          margin-bottom: 8px;
+        }
+        .input {
+          width: 100%;
+          outline: none;
+          @include styleP("medium");
+          padding: 8px;
+          border: 1px solid $colorPrimary_1;
+          border-radius: 12px;
+          &::placeholder {
+            color: rgba($colorGreyscale_1, 0.2);
+          }
+        }
+      }
+    }
+    .container_btn {
+      margin-top: 48px;
+      display: flex;
+      justify-content: center;
+      .btn {
+        @include styleButton("big", "2");
+      }
+    }
+  }
+}
+
+.section_pool {
+  margin: 24px;
+  width: calc(100vw - 48px);
+  height: calc(100vh - 48px);
+  @include containerInit;
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    @container section (width >= #{$breakPoint_mobile}) {
+      @include styleGrid();
+    }
+  }
+  .container {
+    @container section (width >= #{$breakPoint_mobile}) {
+      width: calcGrid(10);
+    }
+    margin-top: 56px;
+    padding: 48px;
+    .container_title {
+      text-align: center;
+      h1 {
+        @include styleH("h1");
+      }
+      p {
+        margin-top: 24px;
+        @include styleP("big");
+      }
+      ul {
+        margin-top: 8px;
+        list-style: none;
+        li {
+          margin-top: 4px;
+          @include styleP("big");
+          &:before {
+            content: "•";
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+    .container_pool{
+      margin-top: 48px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      .pool{
+        width: calc(50% - 12px);
+        padding: 16px;
+        border-radius: 4px;
+        border: 1px solid $colorGreyscale_4;
+        .title{
+          @include styleH("h6", $colorPrimary_2);
+          margin-bottom: 8px;
+        }
+        .list{
+          list-style: none;
+          li{
+            @include styleP("medium");
+            text-transform: capitalize;
+            margin-bottom: 4px;
+            &:before {
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+    }
+    .container_btn {
+      margin-top: 48px;
+      display: flex;
+      justify-content: center;
       .btn {
         @include styleButton("big", "2");
       }

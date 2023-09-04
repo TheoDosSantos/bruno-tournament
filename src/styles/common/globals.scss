@@ -325,7 +325,6 @@ $breakPoint_mobile: 700px;
   gap: 12px;
   cursor: pointer;
   transition: background-color 0.25s ease, border-color 0.25s ease;
-  border-radius: 24px;
   padding: 0px 24px;
   .btn_text {
     transition: color 0.25s ease;
@@ -341,9 +340,13 @@ $breakPoint_mobile: 700px;
     height: 50px;
   } @else if $size == "medium" {
     height: 40px;
+  } @else if $size == "round" {
+    height: 120px;
+    width: 120px;
   }
 
   @if $style == "1" {
+    border-radius: 24px;
     background-color: $colorPrimary_1;
     border: 1px solid transparent;
     .btn_text {
@@ -363,6 +366,7 @@ $breakPoint_mobile: 700px;
       }
     }
   } @else if $style == "2" {
+    border-radius: 24px;
     background-color: transparent;
     border: 1px solid $colorPrimary_1;
     .btn_text {
@@ -379,6 +383,26 @@ $breakPoint_mobile: 700px;
       }
       .btn_icon {
         stroke: $colorGreyscale_5;
+      }
+    }
+  } @else if $style == "3" {
+    border-radius: 50%;
+    background-color: $colorPrimary_1;
+    border: 1px solid transparent;
+    .btn_text {
+      color: $colorGreyscale_5;
+    }
+    .btn_icon {
+      stroke: $colorGreyscale_5;
+    }
+    &:hover {
+      background-color: transparent;
+      border: 1px solid $colorPrimary_1;
+      .btn_text {
+        color: $colorPrimary_1;
+      }
+      .btn_icon {
+        stroke: $colorPrimary_1;
       }
     }
   }
